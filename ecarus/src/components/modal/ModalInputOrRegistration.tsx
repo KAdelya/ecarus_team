@@ -6,11 +6,10 @@ import Input from '../ui/input/input'
 interface Props{
     title: string,
     first_label : string;
-    second_label : string;
 }
 
 
-const ModalInput:FC<Props> = ({title, first_label, second_label}) => {
+const ModalInputOrRegistration:FC<Props> = ({title, first_label}) => {
     return (
         <div className={style.modal}>
             <div className={style.modal_wrapper}>
@@ -25,7 +24,6 @@ const ModalInput:FC<Props> = ({title, first_label, second_label}) => {
                 <div className={style.content_wrapper}>
                     <div className={style.input_wrapper}>
                         <Input placeholder='Телефон' />
-                        <Input placeholder='Пароль' />
                     </div>
                     <div className={style.button_wrapper}>
                         <div className={style.button_wrapper_content}>
@@ -33,10 +31,7 @@ const ModalInput:FC<Props> = ({title, first_label, second_label}) => {
                         </div>
                         <div className={style.link_text_wrapper}>
                             <div>
-                                <a href='input_or_registration'>{first_label}</a>
-                            </div>
-                            <div>
-                                <a href=''>{second_label}</a>
+                                <a href=''>{first_label}</a>
                             </div>
                         </div>
                         <div className={style.button_wrapper_content}>
@@ -48,5 +43,5 @@ const ModalInput:FC<Props> = ({title, first_label, second_label}) => {
         </div>
     );
 }
-export default ModalInput;
+export default ModalInputOrRegistration;
 

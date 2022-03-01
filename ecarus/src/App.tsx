@@ -1,5 +1,5 @@
 import styles from './App.module.sass';
-import Modal from './components/modal/Modal';
+import ModalInput from './components/modal/Modal';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import PersonalArea from './pages/PersonalArea/PersonalArea';
@@ -7,6 +7,7 @@ import MainPage from './pages/MainPage/MainPage';
 import EcoMarket from './pages/EcoMarket/EcoMarker';
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
 import { useState } from 'react';
+import ModalInputOrRegistration from "./components/modal/ModalInputOrRegistration";
 
 const App = () => {
   const [modalActive, setModalActive] = useState(true);
@@ -18,6 +19,9 @@ const App = () => {
         <Routes>
           <Route path='/' element={<MainPage />} />
           <Route path='/ecomarket' element={<PersonalArea />} />
+          <Route path="/input" element={<ModalInput first_label="Войти с помощью смс" second_label="Регистрация" title="Вход"/>}/>
+          <Route path="/input_or_registration" element={<ModalInputOrRegistration first_label="Я уже зарегистрировался(-ась)"
+          title="Вход или регистрация"/>}/>
         </Routes>
         <hr />
         <Footer />
