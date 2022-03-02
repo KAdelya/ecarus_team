@@ -12,7 +12,8 @@ interface Props{
 }
 
 
-const ModalInput:FC<Props> = ({title, first_label, second_label, modalActive, onClose}) => {
+const ModalInput:FC<Props> =  ({title, first_label, second_label, modalActive,
+                                            onClose}) => {
     return (modalActive &&
         <div className={style.modal} onClick={()=> onClose()}>
             <div className={style.modal_wrapper}>
@@ -49,6 +50,5 @@ const ModalInput:FC<Props> = ({title, first_label, second_label, modalActive, on
             </div>
         </div>
     );
-}
+};
 export default ModalInput;
-
