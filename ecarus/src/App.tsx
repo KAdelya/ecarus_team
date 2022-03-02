@@ -9,6 +9,9 @@ import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
 import { useState } from 'react';
 import ModalInputOrRegistration from "./components/modal/ModalInputOrRegistration/ModalInputOrRegistration";
 import ModalInputCode from "./components/modal/ModalInputCode/ModalInputCode";
+import ModalInputForCmpany from "./components/modal/ModalInputForCompany/ModalInputForCompany";
+import ModalInputForCompany from "./components/modal/ModalInputForCompany/ModalInputForCompany";
+import ModalInputForCompanyWithCode from "./components/modal/ModalInputForCompanyWithCode/ModalInputForCompanyWithCode";
 
 const App = () => {
   const [modalActive, setModalActive] = useState(true);
@@ -26,6 +29,12 @@ const App = () => {
           title="Вход или регистрация" onClose={()=> setModalActive(false) } modalActive={modalActive}/>}/>
           <Route path="/input_code" element={<ModalInputCode first_label="Не получил(-а) код" title="Ввести код"
            onClose={()=> setModalActive(false) } modalActive={modalActive}/>}/>
+          <Route path="/input_for_companies" element={<ModalInputForCompany first_label="Войти с помощью смс"
+          second_label="Регистрация" title="Вход" onClose={()=> setModalActive(false) }
+                                                                            modalActive={modalActive}/>}/>
+          <Route path="/input_for_companies_with_code" element={<ModalInputForCompanyWithCode
+              first_label="Я уже зарегистрировался(-ась)"
+          title="Вход" onClose={()=> setModalActive(false) } modalActive={modalActive}/>}/>
         </Routes>
         <hr />
         <Footer />
