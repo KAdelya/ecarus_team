@@ -1,17 +1,18 @@
-import ModalButton from '../ui/modal-button/button'
-import style from './Modal.module.sass';
+import ModalButton from '../../ui/modal-button/button';
+import style from '../Modal.module.sass';
 import { FC } from 'react';
-import Input from '../ui/input/input'
+import Input from '../../ui/input/input';
 
 interface Props{
     title: string,
     first_label : string;
+    second_label : string;
     modalActive: any;
-    onClose: any;
+    onClose: () => void;
 }
 
 
-const ModalInputOrRegistration:FC<Props> = ({title, first_label, modalActive, onClose}) => {
+const ModalInput:FC<Props> = ({title, first_label, second_label, modalActive, onClose}) => {
     return (modalActive &&
         <div className={style.modal} onClick={()=> onClose()}>
             <div className={style.modal_wrapper}>
@@ -26,14 +27,18 @@ const ModalInputOrRegistration:FC<Props> = ({title, first_label, modalActive, on
                 <div className={style.content_wrapper}>
                     <div className={style.input_wrapper}>
                         <Input placeholder='Телефон' />
+                        <Input placeholder='Пароль' />
                     </div>
                     <div className={style.button_wrapper}>
                         <div className={style.button_wrapper_content}>
-                            <ModalButton text='Получить код' color='white' background='#07C88E' width='100%'/>
+                            <ModalButton text='Войти' color='white' background='#07C88E' width='100%' />
                         </div>
                         <div className={style.link_text_wrapper}>
                             <div>
-                                <a href=''>{first_label}</a>
+                                <a href='input_or_registration'>{first_label}</a>
+                            </div>
+                            <div>
+                                <a href=''>{second_label}</a>
                             </div>
                         </div>
                         <div className={style.button_wrapper_content}>
@@ -45,5 +50,5 @@ const ModalInputOrRegistration:FC<Props> = ({title, first_label, modalActive, on
         </div>
     );
 }
-export default ModalInputOrRegistration;
+export default ModalInput;
 

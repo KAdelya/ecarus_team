@@ -1,4 +1,4 @@
-import Modal from "../../components/modal/Modal";
+import Modal from "../../components/modal/ModalInput/ModalInput";
 
 const EcoMarket = () => {
 

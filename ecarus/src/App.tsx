@@ -1,5 +1,5 @@
 import styles from './App.module.sass';
-import ModalInput from './components/modal/Modal';
+import ModalInput from './components/modal/ModalInput/ModalInput';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import PersonalArea from './pages/PersonalArea/PersonalArea';
@@ -7,7 +7,7 @@ import MainPage from './pages/MainPage/MainPage';
 import EcoMarket from './pages/EcoMarket/EcoMarker';
 import { Routes, BrowserRouter as Router, Route } from 'react-router-dom';
 import { useState } from 'react';
-import ModalInputOrRegistration from "./components/modal/ModalInputOrRegistration";
+import ModalInputOrRegistration from "./components/modal/ModalInputOrRegistration/ModalInputOrRegistration";
 
 const App = () => {
   const [modalActive, setModalActive] = useState(true);

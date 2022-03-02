@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import Card from '../../components/card/card';
-import Modal from '../../components/modal/Modal';
+import Modal from '../../components/modal/ModalInput/ModalInput';
 
 import first_pict from '../../assets/images/first-slide-pict.svg';
 import second_pict from '../../assets/images/second-slide-pict.svg';
