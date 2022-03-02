@@ -6,12 +6,14 @@ import Input from '../ui/input/input'
 interface Props{
     title: string,
     first_label : string;
+    modalActive: any;
+    onClose: any;
 }
 
 
-const ModalInputOrRegistration:FC<Props> = ({title, first_label}) => {
-    return (
-        <div className={style.modal}>
+const ModalInputOrRegistration:FC<Props> = ({title, first_label, modalActive, onClose}) => {
+    return (modalActive &&
+        <div className={style.modal} onClick={()=> onClose()}>
             <div className={style.modal_wrapper}>
                 <div className={style.wrapper_title}>
                     <div className={style.modal_title}>
@@ -27,7 +29,7 @@ const ModalInputOrRegistration:FC<Props> = ({title, first_label}) => {
                     </div>
                     <div className={style.button_wrapper}>
                         <div className={style.button_wrapper_content}>
-                            <ModalButton text='Войти' color='white' background='#07C88E' width='100%' />
+                            <ModalButton text='Получить код' color='white' background='#07C88E' width='100%'/>
                         </div>
                         <div className={style.link_text_wrapper}>
                             <div>

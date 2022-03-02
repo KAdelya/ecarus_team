@@ -4,7 +4,7 @@ const EcoMarket = () => {
 
     return (
         <div>
-            <Modal title='Вход' first_label='' second_label=''/>
+            {/*<Modal title='Вход' first_label='' second_label=''/>*/}
         </div>
     )
 };

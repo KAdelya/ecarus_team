@@ -19,9 +19,10 @@ const App = () => {
         <Routes>
           <Route path='/' element={<MainPage />} />
           <Route path='/ecomarket' element={<PersonalArea />} />
-          <Route path="/input" element={<ModalInput first_label="Войти с помощью смс" second_label="Регистрация" title="Вход"/>}/>
+          <Route path="/input" element={<ModalInput first_label="Войти с помощью смс" second_label="Регистрация" title="Вход"
+          onClose={()=> setModalActive(false) } modalActive={modalActive}/>}/>
           <Route path="/input_or_registration" element={<ModalInputOrRegistration first_label="Я уже зарегистрировался(-ась)"
-          title="Вход или регистрация"/>}/>
+          title="Вход или регистрация" onClose={()=> setModalActive(false) } modalActive={modalActive}/>}/>
         </Routes>
         <hr />
         <Footer />
